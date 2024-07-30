@@ -1,9 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background: #6660ff;
-    background: -webkit-linear-gradient(to right, #6660ff, #f9f9f9);
+    width: 100%;
+    overflow-x: hidden;
     background: linear-gradient(to right, #6660ff, #f9f9f9);
     min-height: 100vh;
-    padding-top: 20px;
+    padding-top: 25px;
 }
 
 .text-gray {
