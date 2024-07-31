@@ -1,3 +1,5 @@
+import Button from './Button';
+
 let productCount = 0;
 
 function displayFormattedProductCount(){
@@ -16,9 +18,9 @@ function ProductDetails(props){
         <div>
             <h6 className="font-weight-bold my-2">${props.price}</h6>
                 <div className="d-flex align-items-center justify-content-start mt-5 mb-2">
-                    <button className="btn btn-primary">-</button>
+                    <Button>-</Button>
                     <span className="mx-2" style={{color: '#555', 'font-weight': '500', fontFamily: 'sans-serif'}}>{displayFormattedProductCount()}</span>
-                    <button className="btn btn-primary">+</button>
+                    <Button>+</Button>
                 </div>
                 <span className={badgeClass}>{props.isAvailable ? 'Available' : 'Unavailable'}</span>
         </div>
