@@ -8,6 +8,7 @@ let style = {
 
 
 function Products(props) {
+    console.log("product has been executed");
 
     return (<li className="list-group-item">
         <div className="media align-items-lg-center flex-column flex-lg-row px-3 py-2 d-flex justify-content-between">
