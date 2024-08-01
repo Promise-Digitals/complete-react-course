@@ -1,26 +1,34 @@
 import Button from './Button';
 
-let productCount = 0;
-
-function displayFormattedProductCount(){
-    return productCount > 0 ? productCount : 'zero';
-}
-
-
 
 function ProductDetails(props){
 
     let badgeClass = 'badge ';
     badgeClass += props.isAvailable ? 'bg-success' : 'bg-danger';
 
+    let productCount = 0;
+
+    function displayFormattedProductCount(){
+        return productCount > 0 ? productCount : 'zero';
+    }
+
+    let incrementProductCount = function(){
+        productCount++;
+        console.log(productCount)
+    }
+    
+    let decrementProductCount = function(){
+        productCount--;
+        console.log(productCount)
+    }
 
     return(
         <div>
             <h6 className="font-weight-bold my-2">${props.price}</h6>
                 <div className="d-flex align-items-center justify-content-start mt-5 mb-2">
-                    <Button>-</Button>
-                    <span className="mx-2" style={{color: '#555', 'font-weight': '500', fontFamily: 'sans-serif'}}>{displayFormattedProductCount()}</span>
-                    <Button>+</Button>
+                    <Button eventHandler={decrementProductCount}>-</Button>
+                    <span className="mx-2" style={{color: '#555', fontWeight: '500', fontFamily: 'sans-serif'}}>{displayFormattedProductCount()}</span>
+                    <Button eventHandler={incrementProductCount}>+</Button>
                 </div>
                 <span className={badgeClass}>{props.isAvailable ? 'Available' : 'Unavailable'}</span>
         </div>

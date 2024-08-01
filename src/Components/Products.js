@@ -3,7 +3,7 @@ import ProductDetails from "./ProductsDetails"
 
 let style = {
     fontWeight: "bold",
-    'font-size': 20,
+    fontSize: 20,
 }
 
 
