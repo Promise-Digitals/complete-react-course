@@ -4,8 +4,6 @@ import Button from './Button';
 
 function ProductDetails(props){
 
-    console.log("productDetails has been executed");
-
     let badgeClass = 'badge ';
     badgeClass += props.isAvailable ? 'bg-success' : 'bg-danger';
 
