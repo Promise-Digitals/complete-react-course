@@ -2,6 +2,10 @@ import React,{ useState } from "react"
 
 
 function ProductForm(){
+
+    // let pName = '';
+
+
     let [pName, updateName] = useState('');
     let [pPrice, updatePrice] = useState('');
     let [pDescription, updateDescription] = useState('');
@@ -20,6 +24,8 @@ function ProductForm(){
 
     function nameInputHandler(event){
         updateName(event.target.value)
+
+        // pName = event.target.value;
 
         // updateUserInput({
         //     ...userInput,
@@ -80,7 +86,14 @@ function ProductForm(){
         }
 
 
-        console.log(Product)
+        updateName('');
+        updatePrice('');
+        updateDescription('');
+        // empty string returns false when converted to boolean value
+        updateAvailability('');
+        updateImageUrl('');
+
+        console.log(Product);
     }
 
     return(
@@ -90,6 +103,7 @@ function ProductForm(){
             <input type="text" 
                     className="form-control" 
                     id="name" 
+                    value={pName}
                     placeholder="Product Name"
                     onChange={nameInputHandler}/>
         </div>
@@ -97,7 +111,8 @@ function ProductForm(){
             <label for="price">Product Price</label>
             <input type="number" 
                     min="0.01" step="0.01" 
-                    className="form-control" 
+                    className="form-control"
+                    value={pPrice}
                     id="price" 
                     placeholder="Product Price" 
                     onChange={priceInputHandler}/>
@@ -108,18 +123,19 @@ function ProductForm(){
             <input type="text" 
                     className="form-control" 
                     id="description" 
+                    value={pDescription}
                     placeholder="Product Description" 
                     onChange={descriptionInputHandler}/>
         </div>
 
         <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="isAvailable" onChange={availabilityInputHandler}/>
+            <input class="form-check-input" type="checkbox" role="switch" id="isAvailable" checked={pAvailable} onChange={availabilityInputHandler}/>
             <label class="form-check-label" for="isAvailable">Is product available in stock?</label>
         </div>
 
         <div className="form-group">
             <label for="select-image">Select product image</label>
-            <input type="file" className="form-control" id="select-image" onChange={imageInputHandler}/>
+            <input type="file" className="form-control" id="select-image" value={pImageUrl} onChange={imageInputHandler}/>
         </div>
         
 
