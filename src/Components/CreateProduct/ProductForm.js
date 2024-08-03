@@ -1,7 +1,7 @@
 import React,{ useState } from "react"
 
 
-function ProductForm(){
+function ProductForm(props){
 
     // let pName = '';
 
@@ -77,7 +77,6 @@ function ProductForm(){
         event.preventDefault();
 
         let Product = {
-            pID: 1, 
             pName: pName, 
             desc: pDescription,
             isAvailable: Boolean(pAvailable),
@@ -86,6 +85,7 @@ function ProductForm(){
         }
 
 
+        // resetting the form on submission
         updateName('');
         updatePrice('');
         updateDescription('');
@@ -93,7 +93,8 @@ function ProductForm(){
         updateAvailability('');
         updateImageUrl('');
 
-        console.log(Product);
+        // console.log(product);
+        props.createProduct(Product);
     }
 
     return(
