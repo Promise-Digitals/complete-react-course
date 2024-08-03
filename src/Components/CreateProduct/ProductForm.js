@@ -67,8 +67,24 @@ function ProductForm(){
         // })
     }
 
+    function createProductEventHandler(event){
+        event.preventDefault();
+
+        let Product = {
+            pID: 1, 
+            pName: pName, 
+            desc: pDescription,
+            isAvailable: Boolean(pAvailable),
+            image: pImageUrl,
+            price: Number(pPrice)
+        }
+
+
+        console.log(Product)
+    }
+
     return(
-        <form className="row g-3">
+        <form className="row g-3" onSubmit={createProductEventHandler}>
         <div className="col-md-6">
             <label for="name">Product Name</label>
             <input type="text" 
