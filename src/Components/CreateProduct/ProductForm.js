@@ -2,59 +2,69 @@ import React,{ useState } from "react"
 
 
 function ProductForm(){
-    // let [pName, updateName] = useState('');
-    // let [pPrice, updatePrice] = useState('');
-    // let [pDescription, updateDescription] = useState('');
-    // let [pAvailable, updateAvailability] = useState('');
-    // let [pImageUrl, updateImageUrl] = useState('');
+    let [pName, updateName] = useState('');
+    let [pPrice, updatePrice] = useState('');
+    let [pDescription, updateDescription] = useState('');
+    let [pAvailable, updateAvailability] = useState('');
+    let [pImageUrl, updateImageUrl] = useState('');
 
 
-    let [userInput, updateUserInput] = useState({
-        pName: '',
-        pPrice: '',
-        pDescription: '',
-        pAvailable: '',
-        pImageUrl: ''
-    });
+    // MULTIPLE STATE APPROACH
+    // let [userInput, updateUserInput] = useState({
+    //     pName: '',
+    //     pPrice: '',
+    //     pDescription: '',
+    //     pAvailable: '',
+    //     pImageUrl: ''
+    // });
 
     function nameInputHandler(event){
-        // updateName(event.target.value)
-        updateUserInput({
-            ...userInput,
-            pName: event.target.value
-        })
+        updateName(event.target.value)
+
+        // updateUserInput({
+        //     ...userInput,
+        //     pName: event.target.value
+        // })
+
+        // updateUserInput((prevState) => {
+        //     return{...prevState, pName:event.target.value}
+        // })
     }
 
     function priceInputHandler(event){
-        // updatePrice(event.target.value)
-        updateUserInput({
-            ...userInput,
-            pPrice: event.target.value
-        })
+        updatePrice(event.target.value)
+
+        // updateUserInput({
+        //     ...userInput,
+        //     pPrice: event.target.value
+        // })
     }
 
     function descriptionInputHandler(event){
-        // updateDescription(event.target.value)
-        updateUserInput({
-            ...userInput,
-            pDescription: event.target.value
-        })
+        updateDescription(event.target.value)
+
+        // updateUserInput({
+        //     ...userInput,
+        //     pDescription: event.target.value
+        // })
     }
 
     function availabilityInputHandler(event){
-        // updateAvailability(event.target.value)
-        updateUserInput({
-            ...userInput,
-            pAvailable: event.target.value
-        })
+        updateAvailability(event.target.checked)
+
+        // updateUserInput({
+        //     ...userInput,
+        //     pAvailable: event.target.value
+        // })
     }
 
     function imageInputHandler(event){
-        // updateImageUrl(event.target.value)
-        updateUserInput({
-            ...userInput,
-            pImageUrl: event.target.value
-        })
+        updateImageUrl(event.target.value)
+
+        // updateUserInput({
+        //     ...userInput,
+        //     pImageUrl: event.target.value
+        // })
     }
 
     return(
