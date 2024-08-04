@@ -11,7 +11,7 @@ function ProductList(props){
                 {
                     props.newProductList.map((product)=>{
                         return <Products
-                            id={product?.pID}
+                            key={product?.pID}
                             name={product?.pName}
                             description={product?.desc}
                             isAvailable={product?.isAvailable}
