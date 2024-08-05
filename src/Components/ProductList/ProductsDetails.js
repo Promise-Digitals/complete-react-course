@@ -18,7 +18,6 @@ function ProductDetails(props){
         // productCount++;
         // console.log(productCount)
         updateCount(++productCount)
-        // console.log(props.stock)
     }
     
     let decrementProductCount = function(){
