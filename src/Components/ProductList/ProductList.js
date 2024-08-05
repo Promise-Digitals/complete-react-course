@@ -4,8 +4,10 @@ import Products  from "./Products";
 
 function ProductList(props){
     // console.log(props.newProduct);
+
+    // if(props.newProductList.length === 0) return <h3>No product available!</h3>
     
-    return (
+    return props.newProductList.length === 0 ? <h3>No product available!</h3> : (
             <ul className="list-group shadow">
                 {
                     props.newProductList.map((product)=>{
