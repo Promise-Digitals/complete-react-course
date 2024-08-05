@@ -11,6 +11,7 @@ function ProductForm(props){
     let [pDescription, updateDescription] = useState('');
     let [pAvailable, updateAvailability] = useState('');
     let [pImageUrl, updateImageUrl] = useState('');
+    let [pStock, updateStock] = useState('');
 
 
     // MULTIPLE STATE APPROACH
@@ -73,6 +74,10 @@ function ProductForm(props){
         // })
     }
 
+    function stockInputHandler(event){
+        updateStock(event.target.value)
+    }
+
     function createProductEventHandler(event){
         event.preventDefault();
 
@@ -81,7 +86,8 @@ function ProductForm(props){
             desc: pDescription,
             isAvailable: Boolean(pAvailable),
             image: pImageUrl,
-            price: Number(pPrice)
+            price: Number(pPrice),
+            stock: Boolean(pAvailable) == true ? Number(pStock) : '0'
         }
 
 
@@ -133,6 +139,17 @@ function ProductForm(props){
         <div class="form-check form-switch">
             <input class="form-check-input" type="checkbox" role="switch" id="isAvailable" checked={pAvailable} onChange={availabilityInputHandler}/>
             <label class="form-check-label" for="isAvailable">Is product available in stock?</label>
+        </div>
+
+        <div className="form-group">
+            <label for="stock">Stock Quantity</label>
+            <input type="number" 
+                    className="form-control" 
+                    style={{width: '80px'}}
+                    min={1}
+                    id="stock" 
+                    value={pStock}
+                    onChange={stockInputHandler}/>
         </div>
 
         <div className="form-group">

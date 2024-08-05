@@ -18,6 +18,7 @@ function ProductDetails(props){
         // productCount++;
         // console.log(productCount)
         updateCount(++productCount)
+        // console.log(props.stock)
     }
     
     let decrementProductCount = function(){
@@ -30,9 +31,9 @@ function ProductDetails(props){
         <div>
             <h6 className="font-weight-bold my-2">${props.price}</h6>
                 <div className="d-flex align-items-center justify-content-start mt-5 mb-2">
-                    <Button eventHandler={decrementProductCount}>-</Button>
+                    <Button eventHandler={decrementProductCount} disable={productCount == 0}>-</Button>
                     <span className="mx-2" style={{color: '#555', fontWeight: '500', fontFamily: 'sans-serif'}}>{displayFormattedProductCount()}</span>
-                    <Button eventHandler={incrementProductCount}>+</Button>
+                    <Button eventHandler={incrementProductCount} disable={productCount == props.stock}>+</Button>
                 </div>
                 <span className={badgeClass}>{props.isAvailable ? 'Available' : 'Unavailable'}</span>
         </div>
