@@ -1,17 +1,20 @@
 import './App.css';
-// import Component1 from './Components/Component1';
-import React from 'react';
-import RefsDemo from './Components/RefsDemo';
+import { useState, useEffect } from 'react';
 
 
 function App(){
-    return(
-        <>
-            {/* <h1>This is App Component</h1>
-            <Component1></Component1> */}
+    
+    let [resourceType, setResourceType] = useState('Home');
+    useEffect(()=> {
+        console.log(resourceType)
+    }, [resourceType])
 
-            <RefsDemo></RefsDemo>
-        </>
+    return(<div className="App">
+            <button onClick={() => {setResourceType('Home')}}>HOME</button>
+            <button onClick={() => {setResourceType('About')}}>ABOUT</button>
+            <button onClick={() => {setResourceType('Contact')}}>CONTACT</button>
+            <h3>{resourceType}</h3>
+        </div>
     );
 }
 
