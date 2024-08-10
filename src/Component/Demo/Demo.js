@@ -1,6 +1,7 @@
 import './Demo.css';
 import React, { useState } from 'react';
 import Span from '../UI/Span/Span';
+import Button from '../Button/Button';
 
 
 function Demo(){
@@ -18,9 +19,9 @@ function Demo(){
 
     return(
         <div className="container">
-            <button onClick={decrementHandler}> - </button>
-            <Span>10</Span>
-            <button onClick={incrementHandler}> + </button>
+            <Button clickHandler={decrementHandler}> - </Button>
+            <Span>{10}</Span>
+            <Button clickHandler={incrementHandler}> + </Button>
         </div>
     )
 }

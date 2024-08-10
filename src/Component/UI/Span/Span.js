@@ -6,4 +6,4 @@ function span(props){
     return <span>{props.children}</span>
 }
 
-export default span;
+export default React.memo(span);

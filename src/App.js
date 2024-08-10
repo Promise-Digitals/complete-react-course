@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import Demo from './Component/ReducerDemo/Demo';
+import Demo from './Component/Demo/Demo';
 
 
 
