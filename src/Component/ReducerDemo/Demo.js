@@ -1,32 +1,22 @@
 import './Demo.css';
-import { useReducer } from 'react';
+import React, { useState } from 'react';
 
-function reducer(currState, action){
-    switch(action){
-        case 'increment':
-            return {count: currState.count + 1};
-        case 'decrement':
-            return {count: currState.count - 1};
-        default:
-            return currState;
-    }
-}
 
 function Demo(){
-    let [state, dispatcher] = useReducer(reducer, {count: 0});
-
-    function decrementHandler(){
-        dispatcher('decrement')
-    }
+    let [count, setCount] = useState(0);
 
     function incrementHandler(){
-        dispatcher('increment')
+        setCount(count + 1)
+    }
+
+    function decrementHandler(){
+        setCount(count - 1)
     }
 
     return(
         <div className="container">
             <button onClick={decrementHandler}> - </button>
-            <span>{state.count}</span>
+            <span>{count}</span>
             <button onClick={incrementHandler}> + </button>
         </div>
     )

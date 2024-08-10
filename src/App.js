@@ -9,9 +9,9 @@ function App(){
     
     
     return (
-        <React.Fragment>
+        <div className='App'>
             <Demo></Demo>
-        </React.Fragment>
+        </div>
     );
 }
 
