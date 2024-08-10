@@ -1,5 +1,6 @@
 import './Demo.css';
 import React, { useState } from 'react';
+import Span from '../UI/Span/Span';
 
 
 function Demo(){
@@ -13,10 +14,12 @@ function Demo(){
         setCount(count - 1)
     }
 
+    console.log('Demo executed')
+
     return(
         <div className="container">
             <button onClick={decrementHandler}> - </button>
-            <span>{count}</span>
+            <Span>10</Span>
             <button onClick={incrementHandler}> + </button>
         </div>
     )
