@@ -3,9 +3,12 @@
 }
 
 button{
-    height: 40px;
-    width: 40px;
+    padding: 10px 20px;
     font-size: 25px;
+    margin: 0 10px;
+    background: #6660ff;
+    color: white;
+    border: 1px inset #fff;
 }
 
 span{
