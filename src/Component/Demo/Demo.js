@@ -1,5 +1,5 @@
 import './Demo.css';
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import Span from '../UI/Span/Span';
 import Button from '../Button/Button';
 
@@ -20,12 +20,16 @@ function Demo(){
         setActivate(true);
     }
 
+    let list = useMemo(()=> {
+        return [100, 200]
+    }, [])
+
     console.log('Demo executed')
 
     return(
         <div className="container">
             <Button clickHandler={decrementHandler}> - </Button>
-            <Span>{count}</Span>
+            <Span>{list}</Span>
             <Button clickHandler={incrementHandler}> + </Button>
             <Button clickHandler={activatetHandler}>Activate</Button>
         </div>
